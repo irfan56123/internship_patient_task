@@ -1,4 +1,4 @@
-// In components/LoginPage.tsx
+
 import { useForm } from 'react-hook-form';
 import { Stethoscope, ArrowRight } from 'lucide-react';
 

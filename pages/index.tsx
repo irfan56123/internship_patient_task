@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { LoginPage } from '../components/LoginPage';
 import { BookingFlow } from '../components/BookingFlow';
 import Head from 'next/head';
-
-// --- TYPE DEFINITIONS ---
 export interface Doctor {
   id: number;
   name: string;
   specialty: string;
-  image: string; // Kept for type consistency, but not used by new components
+  image: string; 
   bio: string;
 }
 
@@ -70,8 +68,6 @@ const mockDoctors: Doctor[] = [
     }
 ];
 
-
-// --- MAIN PAGE COMPONENT ---
 export default function HomePage() {
   const [user, setUser] = useState<User | null>(null);
 

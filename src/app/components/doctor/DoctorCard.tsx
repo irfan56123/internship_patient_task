@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface DoctorCardProps {
   name: string;
@@ -18,7 +19,7 @@ const DoctorCard: React.FC<DoctorCardProps> = ({ name, specialty, image, status,
       onClick={onClick}
     >
       {/* Doctor Image */}
-      <img src={image} alt={name} className="w-20 h-20 rounded-xl object-cover mr-4 border-2 border-gray-100" />
+      <Image src={image} alt={name} width={80} height={80} className="w-20 h-20 rounded-xl object-cover mr-4 border-2 border-gray-100" />
       {/* Card Content */}
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">

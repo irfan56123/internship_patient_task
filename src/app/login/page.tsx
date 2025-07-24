@@ -1,19 +1,24 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import Logo from "../components/Logo";
 import React, { useState } from "react";
+import Image from "next/image";
+
+interface LoginForm {
+  login: string;
+  password?: string;
+}
 
 export default function LoginPage() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginForm>();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const onSubmit = (data: any) => {
+  const onSubmit = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      router.push('/booking'); // Redirect to booking page after login
+      router.push('/'); // Redirect to home (doctor list) after login
     }, 1200); // Simulate API call
   };
 
@@ -105,7 +110,7 @@ export default function LoginPage() {
           className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-xl py-3 md:py-4 font-medium text-gray-700 hover:bg-gray-50 transition text-base md:text-lg mb-2"
           style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}
         >
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
+          <Image src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width={20} height={20} className="w-5 h-5" />
           Continue with Google
         </button>
         {/* Sign Up Link */}

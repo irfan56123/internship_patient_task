@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import doctors from "../../../data/doctors.json";
+import Image from "next/image";
 
 const days = [
   { date: 13, day: "MON" },
@@ -80,7 +81,7 @@ export default function BookSlotPage() {
               <div className="text-xs text-gray-500 truncate mb-2">{doctor.bio}</div>
               <div className="inline-block bg-gray-100 text-gray-800 text-xs font-semibold rounded-lg px-3 py-1">{doctor.time}</div>
             </div>
-            <img src={doctor.image} alt={doctor.name} className="w-20 h-20 rounded-xl object-cover ml-4 border-2 border-gray-100 sm:w-24 sm:h-24" />
+            <Image src={doctor.image} alt={doctor.name} width={80} height={80} className="w-20 h-20 rounded-xl object-cover ml-4 border-2 border-gray-100 sm:w-24 sm:h-24" />
           </div>
           {/* Book Appointment Title */}
           <div className="font-bold text-lg text-gray-900 mb-2 sm:text-xl">Book Appointment</div>

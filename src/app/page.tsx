@@ -1,6 +1,5 @@
-import { redirect } from 'next/navigation';
+import DoctorList from "./components/doctor/DoctorList";
 
 export default function Home() {
-  redirect('/login');
-  return null;
+  return <DoctorList />;
 }

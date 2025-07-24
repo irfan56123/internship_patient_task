@@ -2,6 +2,7 @@
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import doctors from "../../data/doctors.json";
+import Image from "next/image";
 
 export default function DoctorDetailPage() {
   const params = useParams();
@@ -41,7 +42,7 @@ export default function DoctorDetailPage() {
                 <div className="text-xs text-gray-400 mb-1 sm:text-sm">{doctor.fellow}</div>
               )}
             </div>
-            <img src={doctor.image} alt={doctor.name} className="w-20 h-20 rounded-xl object-cover ml-4 border-2 border-gray-100 sm:w-24 sm:h-24" />
+            <Image src={doctor.image} alt={doctor.name} width={80} height={80} className="w-20 h-20 rounded-xl object-cover ml-4 border-2 border-gray-100 sm:w-24 sm:h-24" />
           </div>
           {/* Speciality Tags */}
           {doctor.tags && doctor.tags.length > 0 && (

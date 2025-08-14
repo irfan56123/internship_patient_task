@@ -42,9 +42,9 @@ export default function AppointmentPage() {
       return;
     }
 
-    router.push(
-      `/appointment/confirm?doctorId=${doctor.id}&date=${selectedDate}&slot=${selectedSlot}`
-    );
+   router.push(
+    `/appointment/patient-info?doctorId=${doctor.id}&date=${selectedDate}&slot=${selectedSlot}`
+  );
   };
 
   if (loading) return <div className="p-4">Loading...</div>;

@@ -1,7 +1,7 @@
 export const  doctors = [
   {
     id: 1,
-    name: 'Dr. Sarah Johnson',
+    name: 'Dr. Anil Kumar Gupta',
     specialty: 'Cardiologist',
      availablity: 'Available today',
      consultingAvailablity: [
@@ -23,7 +23,7 @@ export const  doctors = [
   },
    {
     id: 2,
-    name: 'Dr. Sarah Johnson',
+    name: 'Dr. john Doe',
     specialty: 'Cardiologist',
     availablity: 'Available today',
     consultingAvailablity: [

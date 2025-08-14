@@ -4,11 +4,9 @@ import { doctors } from '@/data/doctors';
 
 export async function GET(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: Record<string, string> }
 ) {
-  const { id } = context.params;
-
-  const doctor = doctors.find((doc) => doc.id === Number(id));
+  const doctor = doctors.find((doc) => doc.id === Number(params.id));
 
   if (!doctor) {
     return NextResponse.json({ error: 'Doctor not found' }, { status: 404 });
@@ -16,3 +14,4 @@ export async function GET(
 
   return NextResponse.json(doctor);
 }
+

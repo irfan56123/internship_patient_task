@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import DoctorCard from '@/components/doctors/DoctorCard';
 import Navbar from '@/components/navbar';
+import Link from "next/link";
+
+import { Search, Calendar, ClipboardList, User } from "lucide-react";
 
 type Doctor = {
   id: number;
@@ -54,8 +57,28 @@ export default function DoctorPage() {
             ))}
           </div>
         )}
+            <footer className="bg-white py-4 shadow-inner mt-8">
+      <div className="container mx-auto flex justify-around text-center">
+        <Link href="/doctors" className="flex flex-col items-center text-black hover:text-blue-500 transition">
+          <Search size={24} className="text-cyan-500" />
+          <span className="text-sm">Find a Doctor</span>
+        </Link>
+
+        <Link href="" className="flex flex-col items-center text-black hover:text-blue-500 transition">
+          <Calendar size={24} />
+          <span className="text-sm">Appointments</span>
+        </Link>
+
+        <Link href="https://internship-task-02-updated-xy87-mhah1717i.vercel.app/" className="flex flex-col items-center text-black hover:text-blue-500 transition">
+          <User size={24} />
+          <span className="text-sm">Logout</span>
+        </Link>
+      </div>
+    </footer>
+
       </main>
     </div>
+    
   );
 }
 

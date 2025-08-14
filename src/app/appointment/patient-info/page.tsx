@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from "next/link";
+
+import { Search, Calendar, ClipboardList, User } from "lucide-react";
 
 export default function PatientInfoPage() {
   const [showPopup, setShowPopup] = useState(false);
@@ -15,10 +18,23 @@ export default function PatientInfoPage() {
   };
 
   return (
+    
     <div className="p-6 max-w-md mx-auto bg-white">
+ 
+        
+
+        
+
       {/* Patient Info Header */}
-      <h1 className="text-2xl font-bold text-gray-800 mb-1">
-        🩺 Patient Info
+      <h1 className="text-2xl font-bold text-gray-800 mb-1 flex">
+        🩺 Patient Info <Link
+  href="https://internship-task-02-updated-xy87-mhah1717i.vercel.app/"
+  className="m-1 px-3 py-1 bg-red-500 text-white text-sm rounded-md hover:bg-red-600 transition font-medium shadow-sm"
+>
+  Logout
+</Link>
+
+
       </h1>
       <p className="text-sm text-gray-500 mb-4">
         Fill out the details below to proceed with your appointment booking.
@@ -92,6 +108,7 @@ export default function PatientInfoPage() {
           Add Patient Details
         </button>
       </form>
+       
 
       {/* Success Popup */}
       {showPopup && (
@@ -122,8 +139,10 @@ export default function PatientInfoPage() {
             </button>
           </div>
         </div>
+        
       )}
     </div>
+    
   );
 }
 

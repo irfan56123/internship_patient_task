@@ -1,4 +1,4 @@
-// ✅ src/app/doctor/[id]/page.tsx (SERVER COMPONENT, no 'use client')
+// ✅ src/app/doctor/[id]/page.tsx (SERVER COMPONENT)
 import Link from 'next/link';
 
 type Doctor = {
@@ -14,8 +14,14 @@ type Doctor = {
   earliestAppointment: string;
 };
 
-export default async function DoctorDetails({ params }: { params: { id: string } }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/doctors/${params.id}`, {
+interface DoctorDetailsProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function DoctorDetails({ params }: DoctorDetailsProps) {
+  const { id } = await params; // ✅ Next.js 15 requires awaiting params
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/doctors/${id}`, {
     cache: 'no-store',
   });
 

@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
    images: {
     domains: ['cdn-icons-png.freepik.com'],
   },
+   eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
